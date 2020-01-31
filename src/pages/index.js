@@ -1,3 +1,6 @@
 import React from "react"
+import MainHeader from "../components/main_header"
 
-export default () => <div>Hello world, This is Raghav Sharma!</div>
+export default () => (
+    <MainHeader />
+)
