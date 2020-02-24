@@ -2,32 +2,36 @@
   "devFiles": [],
   "pages": {
     "/": [
-      "static/runtime/webpack-91b117697e716c22a78b.js",
+      "static/runtime/webpack-4b444dab214c6491079c.js",
       "static/chunks/framework.94bc9fd9a7de53a90996.js",
-      "static/chunks/commons.c28bac984b597bbefc5b.js",
+      "static/chunks/commons.633621edf5a51bb5c371.js",
+      "static/css/styles.e473baa0.chunk.css",
+      "static/chunks/styles.ba171548e3c0fd694c44.js",
       "static/runtime/main-f1c7ce382532bd119f65.js"
     ],
     "/_app": [
-      "static/runtime/webpack-91b117697e716c22a78b.js",
+      "static/runtime/webpack-4b444dab214c6491079c.js",
       "static/chunks/framework.94bc9fd9a7de53a90996.js",
-      "static/chunks/commons.c28bac984b597bbefc5b.js",
-      "static/chunks/55e61f842e430ac3c1a1a1fd29ece2e1effd2eae.a9b27a1eb79cf02e7b62.js",
+      "static/chunks/commons.633621edf5a51bb5c371.js",
+      "static/chunks/14bc6115dc5310d3cd5fcd5d68c9b64f25363e0a.25a99d97f8ecddb5f8f4.js",
       "static/runtime/main-f1c7ce382532bd119f65.js",
-      "static/J6Oyis38bh59RLDJetDhE/_buildManifest.js"
+      "static/thJYS9-WYrjUivv3nyCRU/_buildManifest.js"
     ],
     "/_error": [
-      "static/runtime/webpack-91b117697e716c22a78b.js",
+      "static/runtime/webpack-4b444dab214c6491079c.js",
       "static/chunks/framework.94bc9fd9a7de53a90996.js",
-      "static/chunks/commons.c28bac984b597bbefc5b.js",
+      "static/chunks/commons.633621edf5a51bb5c371.js",
       "static/runtime/main-f1c7ce382532bd119f65.js"
     ],
     "/_polyfills": [
       "static/runtime/polyfills-8a2270019535ee730989.js"
     ],
     "/index": [
-      "static/runtime/webpack-91b117697e716c22a78b.js",
+      "static/runtime/webpack-4b444dab214c6491079c.js",
       "static/chunks/framework.94bc9fd9a7de53a90996.js",
-      "static/chunks/commons.c28bac984b597bbefc5b.js",
+      "static/chunks/commons.633621edf5a51bb5c371.js",
+      "static/css/styles.e473baa0.chunk.css",
+      "static/chunks/styles.ba171548e3c0fd694c44.js",
       "static/runtime/main-f1c7ce382532bd119f65.js"
     ]
   }

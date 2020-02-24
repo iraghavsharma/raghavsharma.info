@@ -1,0 +1,29 @@
+{
+"homepage":[
+    {    
+        "id":"hp-profile",
+        "name":"Profile",
+        "href":"/profile",
+        "type":"link"
+    },
+    {
+        "id":"hp-portfolio",
+        "name":"Portfolio",
+        "href":"/portfolio",
+        "type":"link"
+    },
+    {   
+        "id":"hp-blog",
+        "name":"Blog",
+        "href":"/blog",
+        "type":"link"
+    },
+    {
+        "id":"hp-connect",
+        "name":"Connect",
+        "href":"/connect",
+        "type":"link"
+    }
+    ]
+
+}

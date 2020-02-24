@@ -1,21 +1,23 @@
-
-export default function Index() {
+import styles from "../assets/styles/homepage.css"
+import NavLinks from "../components/navLinks"
+import SocialLinks from "../components/socialLinks";
+    
+const Index = () => {
+    let roles = ["Frontend Developer","Backend Developer","Data Analyst","Web Analytics Implementor","Continous Learner"]
+    let role = roles[Math.floor(Math.random()*roles.length)];
     return (
-    <html>
-        <head>
-            <title>Build with Nextjs</title>
-        </head>
-        <body>
-            <header>
-                <h1>Welcome to raghavsharma.info</h1>
-            </header>
-            <main>
-                <p>This site is still under construction and might not be up for some time.</p>
-                <p>
-                    <div>Name: Raghav Sharma</div>
-                    <div>Place: Toronto, Ont</div>
-                </p>
-            </main>    
-        </body>
-    </html>);
+            <main className="main">
+                <section className="name-introduction__container">
+                    <h1>Raghav Sharma</h1>
+                    <div className="role">I am {role}</div>
+                </section>
+                <section className="nav-links__container">
+                    <NavLinks for="homepage" />
+                </section>
+                <section className="social-overlay__container">
+                    <SocialLinks for="overlay" />
+                </section>
+            </main>);
 }
+
+export default Index;

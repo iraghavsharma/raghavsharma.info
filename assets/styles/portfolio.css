@@ -1,0 +1,25 @@
+@media only screen and (min-width: 1280px) {
+ .main{
+    width:1280px;
+ }
+}
+
+.main{
+    border:2px solid #c7c7c7;
+    display:flex; 
+    align-items:center;
+    justify-content: center;
+    text-align:center;
+    height:100vh;
+    margin:2em auto;
+    max-width: 93%;
+    border-radius:30px;
+    background-color:#fbfbfb
+    
+}
+body{
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}

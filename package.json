@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  	"dev":"next",
-	  "build":"next build",
-    "start":"next start",
-    "export": "npm run build && next export"
+    "dev": "next",
+    "set": "npm install && npm run dev",
+    "build": "next build",
+    "start": "next start",
+    "deploy": "npm run build && npm run export"
   },
   "repository": {
     "type": "git",
@@ -21,8 +22,10 @@
   },
   "homepage": "https://github.com/iraghavsharma/raghavsharma.info#readme",
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
     "next": "^9.2.2",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "swr": "^0.1.17"
   }
 }
