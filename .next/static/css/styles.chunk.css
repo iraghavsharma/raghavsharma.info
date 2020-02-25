@@ -1,3 +1,10 @@
+main.main{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 section.name-introduction__container, section.nav-links__container{
     text-align:center;
 }
@@ -10,7 +17,7 @@ section.name-introduction__container, section.nav-links__container{
     margin:0 1em;
 }
 
-.social-overlay__container{
+.social-overlay-tray__container{
     position:absolute;
     top: 1.2em;
     right:0;

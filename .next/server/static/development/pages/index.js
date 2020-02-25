@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -108,10 +108,10 @@ module.exports = JSON.parse("{\"homepage\":[{\"id\":\"hp-profile\",\"name\":\"Pr
 /*!**************************************!*\
   !*** ./assets/json/socialLinks.json ***!
   \**************************************/
-/*! exports provided: overlay, default */
+/*! exports provided: 0, 1, 2, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"overlay\":[{\"id\":\"twitter\",\"name\":\"Twitter\",\"href\":\"https://mobile.twitter.com/irraghav\",\"type\":\"link\"},{\"id\":\"instagram\",\"name\":\"Instagram\",\"href\":\"https://www.instagram.com/irraghav/\",\"type\":\"link\"},{\"id\":\"linkedin\",\"name\":\"LinkedIn\",\"href\":\"https://ca.linkedin.com/in/raghav-sharma-80633452\",\"type\":\"link\"}]}");
+module.exports = JSON.parse("[{\"id\":\"twitter\",\"name\":\"Twitter\",\"href\":\"https://mobile.twitter.com/irraghav\",\"type\":\"link\"},{\"id\":\"instagram\",\"name\":\"Instagram\",\"href\":\"https://www.instagram.com/irraghav/\",\"type\":\"link\"},{\"id\":\"linkedin\",\"name\":\"LinkedIn\",\"href\":\"https://ca.linkedin.com/in/raghav-sharma-80633452\",\"type\":\"link\"}]");
 
 /***/ }),
 
@@ -149,10 +149,11 @@ const AtomButton = props => {
       lineNumber: 3
     },
     __self: undefined
-  }, __jsx("a", {
+  }, __jsx("button", {
     className: "button",
     id: props.id,
     href: props.href,
+    onClick: props.onClick,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 4
@@ -268,10 +269,10 @@ const NavLinks = props => {
 
 /***/ }),
 
-/***/ "./components/socialLinks.js":
-/*!***********************************!*\
-  !*** ./components/socialLinks.js ***!
-  \***********************************/
+/***/ "./components/socialLinksTray.js":
+/*!***************************************!*\
+  !*** ./components/socialLinksTray.js ***!
+  \***************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -282,7 +283,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_json_socialLinks_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/json/socialLinks.json */ "./assets/json/socialLinks.json");
 var _assets_json_socialLinks_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../assets/json/socialLinks.json */ "./assets/json/socialLinks.json", 1);
 /* harmony import */ var _atoms_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./atoms/link */ "./components/atoms/link.js");
-var _jsxFileName = "/Users/raghav/repos/raghavsharma.info/components/socialLinks.js";
+/* harmony import */ var _atoms_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./atoms/button */ "./components/atoms/button.js");
+var _jsxFileName = "/Users/raghav/repos/raghavsharma.info/components/socialLinksTray.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -291,30 +293,72 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 
 
-const SocialLinks = props => {
-  let list = props.for ? _assets_json_socialLinks_json__WEBPACK_IMPORTED_MODULE_1__[props.for] : _assets_json_socialLinks_json__WEBPACK_IMPORTED_MODULE_1__;
-  let link_list = list.map(list => {
-    return __jsx(_atoms_link__WEBPACK_IMPORTED_MODULE_2__["default"], _extends({
-      key: list.id
-    }, list, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 7
-      },
-      __self: undefined
-    }));
-  });
-  return __jsx("div", {
-    className: `social-links link-for__${props.for}`,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10
-    },
-    __self: undefined
-  }, link_list);
-};
 
-/* harmony default export */ __webpack_exports__["default"] = (SocialLinks);
+
+class SocialLinksTray extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+    this.state = {
+      show: false
+    };
+    this.toggleState = this.toggleState.bind(this);
+  }
+
+  toggleState() {
+    this.setState({
+      show: !this.state.show
+    });
+  }
+
+  render() {
+    let link_list = _assets_json_socialLinks_json__WEBPACK_IMPORTED_MODULE_1__.map(links => {
+      return __jsx(_atoms_link__WEBPACK_IMPORTED_MODULE_2__["default"], _extends({
+        key: links.id
+      }, links, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22
+        },
+        __self: this
+      }));
+    });
+
+    if (this.state.show) {
+      return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
+        className: `social-links-tray link-for__social-overlay-tray`,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26
+        },
+        __self: this
+      }, link_list), __jsx(_atoms_button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        name: "Click me",
+        onClick: this.toggleState,
+        id: "social-overlay-tray__button",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 27
+        },
+        __self: this
+      }));
+    } else {
+      return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_atoms_button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        name: "Click me",
+        onClick: this.toggleState,
+        id: "social-overlay-tray__button",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 32
+        },
+        __self: this
+      }));
+    }
+  }
+
+}
+
+;
+/* harmony default export */ __webpack_exports__["default"] = (SocialLinksTray);
 
 /***/ }),
 
@@ -332,7 +376,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_styles_homepage_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/styles/homepage.css */ "./assets/styles/homepage.css");
 /* harmony import */ var _assets_styles_homepage_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_assets_styles_homepage_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_navLinks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/navLinks */ "./components/navLinks.js");
-/* harmony import */ var _components_socialLinks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/socialLinks */ "./components/socialLinks.js");
+/* harmony import */ var _components_socialLinksTray__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/socialLinksTray */ "./components/socialLinksTray.js");
 var _jsxFileName = "/Users/raghav/repos/raghavsharma.info/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -343,59 +387,65 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Index = () => {
   let roles = ["Frontend Developer", "Backend Developer", "Data Analyst", "Web Analytics Implementor", "Continous Learner"];
   let role = roles[Math.floor(Math.random() * roles.length)];
-  return __jsx("main", {
-    className: "main",
+  return __jsx("div", {
+    className: "page-container",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 9
+    },
+    __self: undefined
+  }, __jsx("main", {
+    className: "main",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
     },
     __self: undefined
   }, __jsx("section", {
     className: "name-introduction__container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 11
     },
     __self: undefined
   }, __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 12
     },
     __self: undefined
   }, "Raghav Sharma"), __jsx("div", {
     className: "role",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 13
     },
     __self: undefined
   }, "I am ", role)), __jsx("section", {
     className: "nav-links__container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 15
     },
     __self: undefined
   }, __jsx(_components_navLinks__WEBPACK_IMPORTED_MODULE_2__["default"], {
     for: "homepage",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 16
     },
     __self: undefined
-  })), __jsx("section", {
-    className: "social-overlay__container",
+  }))), __jsx("nav", {
+    className: "social-overlay-tray__container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 19
     },
     __self: undefined
-  }, __jsx(_components_socialLinks__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    for: "overlay",
+  }, __jsx(_components_socialLinksTray__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 20
     },
     __self: undefined
   })));
@@ -405,7 +455,7 @@ const Index = () => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
